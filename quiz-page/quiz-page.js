@@ -1,3 +1,10 @@
+let questionContent=document.getElementById('question')
+let Answer1=document.getElementById('Answer1')
+let Answer2=document.getElementById('Answer2')
+let Answer3=document.getElementById('Answer3')
+let Answer4=document.getElementById('Answer4')
+let nextBtn=document.getElementById('next')
+nextBtn.addEventListener('click',nextQuestion)
 // creating an array and passing the number, questions, options, and answers
 let questions = [
     {
@@ -69,3 +76,14 @@ let questions = [
   //   ]
   // },
 ];
+var i =0;
+function nextQuestion(){
+  
+        if(questions[i].numb==++i){
+        questionContent.innerText=questions[i].question
+        Answer1.value=questions[i].options[0]
+        Answer2.value=questions[i].options[1]
+        Answer3.value=questions[i].options[2]
+        Answer4.value=questions[i].options[3]
+        }
+    }

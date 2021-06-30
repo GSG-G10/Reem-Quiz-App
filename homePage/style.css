@@ -7,7 +7,7 @@
 
 .main{
     background-color: #E5C0D8;
-    width:70%;
+    width:65%;
     height: 95vh;
     margin: 10px auto;
     padding: 50px;
@@ -49,10 +49,10 @@ input{
 figure img{ 
     width:300px;
     height: 300px;
-    margin: -100px -70px;
+    margin: -150px -70px;
 }
 
-a{
+button{
     color: #fff;
     background-color:#B44A90;
     padding: 15px;
