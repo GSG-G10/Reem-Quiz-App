@@ -126,7 +126,7 @@ function nextQuestion(){
         Answer4.innerText=questions[i].options[3]
         //To change Radio buttons values 
         choice[0].value=questions[i].options[0]
-        choice[0].checked=false
+        choice[0].checked=false // to uncheck redio btns
         choice[1].value=questions[i].options[1]
         choice[1].checked=false
         choice[2].value=questions[i].options[2]
