@@ -83,8 +83,10 @@ button{
 .hide{
     display: none;
     visibility: hidden;
-    width:0;
-    height: 0;
+}
+.unhide{
+    display: inline-block;
+    visibility: visible;
 }
 .scoreStyle{
     padding: 25px;

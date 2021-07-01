@@ -5,13 +5,16 @@ let Answer2=document.getElementById('Answer2')
 let Answer3=document.getElementById('Answer3')
 let Answer4=document.getElementById('Answer4')
 let nextBtn=document.getElementById('next')
+let backbtn=document.getElementById('backbtn')
 let article=document.getElementById('question-side')
 var choice = document.getElementsByName('answer');
-
 let score=0
 //Action for next button
 nextBtn.addEventListener('click',nextQuestion)
-
+backbtn.addEventListener('click',backToHome)
+function backToHome(){
+  window.location.href="../index.html";
+}
 
 // creating an array and passing the number, questions, options, and answers
 let questions = [
@@ -135,12 +138,12 @@ function nextQuestion(){
         }
 
        }
-      else {
-         playerName=sessionStorage.getItem("name");
+      else { // For final score when quiz end 
+         playerName=sessionStorage.getItem("name"); //get name from session sorage
          article.innerText=`   ${playerName}   :  ${score} / 5 ` 
          nextBtn.classList.add("hide");
          article.classList.add("scoreStyle");
-         nextBtn.style.color='red'
+         backbtn.classList.add("unhide");
          addNameToLocalSorage()
          getDataFromLocalSorage()
       }
@@ -171,7 +174,7 @@ if((oldData !== null)){
 }
 
 }
-// ******************gIT DATA FROM LOCAL STORAGE*************************
+// ******************GIT DATA FROM LOCAL STORAGE*************************
 function getDataFromLocalSorage(){
   localStorage.getItem(data);
   for(var z=0;z<data.length;++z){
