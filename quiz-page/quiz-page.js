@@ -178,9 +178,9 @@ if((oldData !== null)){
 function getDataFromLocalSorage(){
   let dataFromLocal = JSON.parse(localStorage.getItem("data"));
   console.log(dataFromLocal)
-  for(var z=0;z<dataFromLocal.length;++z){
+  for(var z=dataFromLocal.length-2;z>0;--z){
     article.innerText+='\n'
-    article.innerText+=`${dataFromLocal[z].name}    :     ${dataFromLocal[z].score}`
+    article.innerText+=`${dataFromLocal[z].name}    :     ${dataFromLocal[z].score} /5`
   }
 
 }
