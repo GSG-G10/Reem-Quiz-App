@@ -112,9 +112,13 @@ function calculateScore(i ,selectedChoice){
 // =========== nextQuestion btn ===========
 var i =1;
 let playerName
+let flag
 function nextQuestion(){
-  gitRadioValue()
-  calculateScore(i ,selectedChoice)
+gitRadioValue()
+calculateScore(i ,selectedChoice)
+flag =checkUnAnswerQuestion(selectedChoice)
+console.log(selectedChoice)
+  if (flag){
 
         if(i<5){
         if(questions[i].numb==i){
@@ -137,8 +141,8 @@ function nextQuestion(){
         questionNum.textContent=`${++i}/5`
 
         }
-
-       }
+      }
+       
       else { // For final score when quiz end 
          playerName=sessionStorage.getItem("name"); //get name from session sorage
          article.innerText=`   ${playerName}      :     ${score} / 5 ` 
@@ -149,7 +153,7 @@ function nextQuestion(){
          addNameToLocalSorage()
          getDataFromLocalSorage()
       }
-
+    }
     }
 // Edit score in local
 
@@ -185,4 +189,15 @@ function getDataFromLocalSorage(){
     article.innerText+=`${dataFromLocal[z].name}    :     ${dataFromLocal[z].score} /5`
   }
 
+}
+// ***************************checkUnAnswerQuestion******************************************
+function checkUnAnswerQuestion(choice){
+  if (choice==''||choice==undefined){
+    alert ('You must answer the question')
+    selectedChoice=''
+    return false;
+  }
+  else { 
+    selectedChoice=''
+    return true}
 }
