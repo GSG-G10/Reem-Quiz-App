@@ -137,12 +137,12 @@ function nextQuestion(){
        }
       else {
          playerName=sessionStorage.getItem("name");
-        article.innerText=`${score} / 5       ${playerName}` 
-        nextBtn.classList.add("hide");
-        article.classList.add("scoreStyle");
-        nextBtn.style.color='red'
-        addNameToLocalSorage()
-        getDataFromLocalSorage()
+         article.innerText=`   ${playerName}   :  ${score} / 5 ` 
+         nextBtn.classList.add("hide");
+         article.classList.add("scoreStyle");
+         nextBtn.style.color='red'
+         addNameToLocalSorage()
+         getDataFromLocalSorage()
       }
 
     }
