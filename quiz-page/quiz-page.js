@@ -6,6 +6,7 @@ let Answer3=document.getElementById('Answer3')
 let Answer4=document.getElementById('Answer4')
 let nextBtn=document.getElementById('next')
 let backbtn=document.getElementById('backbtn')
+let questionNum=document.getElementById('questionNum')
 let article=document.getElementById('question-side')
 var choice = document.getElementsByName('answer');
 let score=0
@@ -133,8 +134,8 @@ function nextQuestion(){
         choice[2].checked=false
         choice[3].value=questions[i].options[3]
         choice[3].checked=false
+        questionNum.textContent=`${++i}/5`
 
-        ++i;
         }
 
        }
