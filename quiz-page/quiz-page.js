@@ -145,6 +145,7 @@ function nextQuestion(){
          nextBtn.classList.add("hide");
          article.classList.add("scoreStyle");
          backbtn.classList.add("unhide");
+         questionNum.textContent='results'
          addNameToLocalSorage()
          getDataFromLocalSorage()
       }
