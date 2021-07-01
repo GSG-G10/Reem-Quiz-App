@@ -140,7 +140,7 @@ function nextQuestion(){
        }
       else { // For final score when quiz end 
          playerName=sessionStorage.getItem("name"); //get name from session sorage
-         article.innerText=`   ${playerName}   :  ${score} / 5 ` 
+         article.innerText=`   ${playerName}      :     ${score} / 5 ` 
          nextBtn.classList.add("hide");
          article.classList.add("scoreStyle");
          backbtn.classList.add("unhide");
@@ -162,7 +162,7 @@ const dataObject = {
 }
 /* If there is data saved already in local storage, add the new data to old data*/
 let oldData = JSON.parse(localStorage.getItem("data"));
-console.log(oldData)
+
 if((oldData !== null)){
     oldData.push(dataObject);
     localStorage.setItem("data", JSON.stringify(oldData))
@@ -176,9 +176,11 @@ if((oldData !== null)){
 }
 // ******************GIT DATA FROM LOCAL STORAGE*************************
 function getDataFromLocalSorage(){
-  localStorage.getItem(data);
-  for(var z=0;z<data.length;++z){
-    article+=`${data[i].name} ,${data[i].score}`
+  let dataFromLocal = JSON.parse(localStorage.getItem("data"));
+  console.log(dataFromLocal)
+  for(var z=0;z<dataFromLocal.length;++z){
+    article.innerText+='\n'
+    article.innerText+=`${dataFromLocal[z].name}    :     ${dataFromLocal[z].score}`
   }
 
 }
